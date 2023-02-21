@@ -136,19 +136,19 @@ function showUserCity() {
               // if it's daytime, use the appropriate weather image
               switch (json.weather[0].main) {
                 case "Clear":
-                  weatherImage = "images/clear.svg";
+                  weatherImage = "./images/clear.svg";
                   break;
                 case "Rain":
-                  weatherImage = "images/rain.svg";
+                  weatherImage = "./images/rain.svg";
                   break;
                 case "Snow":
-                  weatherImage = "images/snow.svg";
+                  weatherImage = "./images/snow.svg";
                   break;
                 case "Clouds":
-                  weatherImage = "images/clouds.svg";
+                  weatherImage = "./images/clouds.svg";
                   break;
                 case "Haze":
-                  weatherImage = "images/mist.svg";
+                  weatherImage = "./images/mist.svg";
                   break;
                 default:
                   weatherImage = "";
@@ -157,19 +157,19 @@ function showUserCity() {
               // if it's nighttime, use the appropriate night weather image
               switch (json.weather[0].main) {
                 case "Clear":
-                  weatherImage = "images/clear-night.svg";
+                  weatherImage = "./images/clear-night.svg";
                   break;
                 case "Rain":
-                  weatherImage = "images/rain-night.svg";
+                  weatherImage = "./images/rain-night.svg";
                   break;
                 case "Snow":
-                  weatherImage = "images/snow-night.svg";
+                  weatherImage = "./images/snow-night.svg";
                   break;
                 case "Clouds":
-                  weatherImage = "images/clouds-night.svg";
+                  weatherImage = "./images/clouds-night.svg";
                   break;
                 case "Haze":
-                  weatherImage = "images/mist-night.svg";
+                  weatherImage = "./images/mist-night.svg";
                   break;
                 default:
                   weatherImage = "";
