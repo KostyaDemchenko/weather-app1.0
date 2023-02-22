@@ -34,11 +34,9 @@
 
 //             const currentTime = new Date(); // get the current time
 //             const currentHour = currentTime.getHours(); // get the current hour
-
+            
 //             let weatherImage;
-
 //             if (currentHour >= 6 && currentHour <= 18) {
-//               // if it's daytime, use the appropriate weather image
 //               switch (json.weather[0].main) {
 //                 case 'Clear':
 //                   weatherImage = './images/clear.svg';
@@ -49,17 +47,40 @@
 //                 case 'Snow':
 //                   weatherImage = './images/snow.svg';
 //                   break;
-//                 case 'Clouds':
-//                   weatherImage = './images/clouds.svg';
-//                   break;
 //                 case 'Haze':
 //                   weatherImage = './images/mist.svg';
+//                   break;
+//                 case 'Dust':
+//                   weatherImage = './images/mist.svg';
+//                   break;
+//                 case 'Fog':
+//                   weatherImage = './images/mist.svg';
+//                   break;
+//                 case 'Tornado':
+//                   weatherImage = './images/mist.svg';
+//                   break;
+//                 case 'Drizzle':
+//                   weatherImage = './images/drizzle.svg';
+//                   break;
+//                 case 'Thunderstorm':
+//                   weatherImage = './images/thunderstorm.svg';
+//                   break;
+//                 default:
+//                   weatherImage = '';
+//               }
+//               switch (json.weather[0].description) {
+//                 case 'few clouds':
+//                 case 'scattered clouds':
+//                   weatherImage = './images/clouds.svg';
+//                   break;
+//                 case 'broken clouds':
+//                 case 'overcast clouds':
+//                   weatherImage = './images/overcast-clouds.svg';
 //                   break;
 //                 default:
 //                   weatherImage = '';
 //               }
 //             } else {
-//               // if it's nighttime, use the appropriate night weather image
 //               switch (json.weather[0].main) {
 //                 case 'Clear':
 //                   weatherImage = './images/clear-night.svg';
@@ -70,18 +91,41 @@
 //                 case 'Snow':
 //                   weatherImage = './images/snow-night.svg';
 //                   break;
-//                 case 'Clouds':
-//                   weatherImage = './images/clouds-night.svg';
-//                   break;
 //                 case 'Haze':
 //                   weatherImage = './images/mist-night.svg';
+//                   break;
+//                 case 'Dust':
+//                   weatherImage = './images/mist-night.svg';
+//                   break;
+//                 case 'Fog':
+//                   weatherImage = './images/mist-night.svg';
+//                   break;
+//                 case 'Tornado':
+//                   weatherImage = './images/mist-night.svg';
+//                   break;
+//                 case 'Drizzle':
+//                   weatherImage = './images/drizzle-night.svg';
+//                   break;
+//                 case 'Thunderstorm':
+//                   weatherImage = './images/thunderstorm-night.svg';
+//                   break;
+//                 default:
+//                   weatherImage = '';
+//               }
+//               switch (json.weather[0].description) {
+//                 case 'few clouds':
+//                 case 'scattered clouds':
+//                   weatherImage = './images/clouds-night.svg';
+//                   break;
+//                 case 'broken clouds':
+//                 case 'overcast clouds':
+//                   weatherImage = './images/overcast-clouds-night.svg';
 //                   break;
 //                 default:
 //                   weatherImage = '';
 //               }
 //             }
 
-//             // Update the weather image
 //             if (weatherImage) {
 //               image.src = weatherImage;
 //             }
@@ -154,11 +198,9 @@
 
 //       const currentTime = new Date(); // get the current time
 //       const currentHour = currentTime.getHours(); // get the current hour
-
+      
 //       let weatherImage;
-
 //       if (currentHour >= 6 && currentHour <= 18) {
-//         // if it's daytime, use the appropriate weather image
 //         switch (json.weather[0].main) {
 //           case 'Clear':
 //             weatherImage = './images/clear.svg';
@@ -169,17 +211,40 @@
 //           case 'Snow':
 //             weatherImage = './images/snow.svg';
 //             break;
-//           case 'Clouds':
-//             weatherImage = './images/clouds.svg';
-//             break;
 //           case 'Haze':
 //             weatherImage = './images/mist.svg';
+//             break;
+//           case 'Dust':
+//             weatherImage = './images/mist.svg';
+//             break;
+//           case 'Fog':
+//             weatherImage = './images/mist.svg';
+//             break;
+//           case 'Tornado':
+//             weatherImage = './images/mist.svg';
+//             break;
+//           case 'Drizzle':
+//             weatherImage = './images/drizzle.svg';
+//             break;
+//           case 'Thunderstorm':
+//             weatherImage = './images/thunderstorm.svg';
+//             break;
+//           default:
+//             weatherImage = '';
+//         }
+//         switch (json.weather[0].description) {
+//           case 'few clouds':
+//           case 'scattered clouds':
+//             weatherImage = './images/clouds.svg';
+//             break;
+//           case 'broken clouds':
+//           case 'overcast clouds':
+//             weatherImage = './images/overcast-clouds.svg';
 //             break;
 //           default:
 //             weatherImage = '';
 //         }
 //       } else {
-//         // if it's nighttime, use the appropriate night weather image
 //         switch (json.weather[0].main) {
 //           case 'Clear':
 //             weatherImage = './images/clear-night.svg';
@@ -190,17 +255,42 @@
 //           case 'Snow':
 //             weatherImage = './images/snow-night.svg';
 //             break;
-//           case 'Clouds':
-//             weatherImage = './images/clouds-night.svg';
-//             break;
 //           case 'Haze':
 //             weatherImage = './images/mist-night.svg';
+//             break;
+//           case 'Dust':
+//             weatherImage = './images/mist-night.svg';
+//             break;
+//           case 'Fog':
+//             weatherImage = './images/mist-night.svg';
+//             break;
+//           case 'Tornado':
+//             weatherImage = './images/mist-night.svg';
+//             break;
+//           case 'Drizzle':
+//             weatherImage = './images/drizzle-night.svg';
+//             break;
+//           case 'Thunderstorm':
+//             weatherImage = './images/thunderstorm-night.svg';
+//             break;
+//           default:
+//             weatherImage = '';
+//         }
+//         switch (json.weather[0].description) {
+//           case 'few clouds':
+//           case 'scattered clouds':
+//             weatherImage = './images/clouds-night.svg';
+//             break;
+//           case 'broken clouds':
+//           case 'overcast clouds':
+//             weatherImage = './images/overcast-clouds-night.svg';
 //             break;
 //           default:
 //             weatherImage = '';
 //         }
 //       }
-
+      
+//       // Update the weather image
 //       if (weatherImage) {
 //         image.src = weatherImage;
 //       }
@@ -219,7 +309,7 @@
 //     });
 // });
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
@@ -228,180 +318,308 @@ window.addEventListener("load", () => {
         )
           .then((response) => response.json())
           .then((json) => {
-            const weatherBox = document.querySelector(".weather-box");
-            const weatherDetails = document.querySelector(".weather-details");
-            const container = document.querySelector(".container");
+            const weatherBox = document.querySelector('.weather-box');
+            const weatherDetails = document.querySelector('.weather-details');
+            const container = document.querySelector('.container');
             if (weatherBox && weatherDetails && container) {
-              const image = document.querySelector(".weather-box img");
+              const image = document.querySelector('.weather-box img');
               const temperature = document.querySelector(
-                ".weather-box .temperature"
+                '.weather-box .temperature'
               );
               const description = document.querySelector(
-                ".weather-box .description"
+                '.weather-box .description'
               );
-              const feels = document.querySelector(".weather-box .feels");
+              const feels = document.querySelector('.weather-box .feels');
               const humidity = document.querySelector(
-                ".weather-details .humidity span"
+                '.weather-details .humidity span'
               );
               const wind = document.querySelector(
-                ".weather-details .wind span"
+                '.weather-details .wind span'
               );
               const currentTime = new Date();
               const currentHour = currentTime.getHours();
-              let weatherImage = "";
-              switch (json.weather[0].main) {
-                case "Clear":
-                  weatherImage =
-                    currentHour >= 6 && currentHour <= 18
-                      ? "./images/clear.svg"
-                      : "./images/clear-night.svg";
-                  break;
-                case "Rain":
-                  weatherImage =
-                    currentHour >= 6 && currentHour <= 18
-                      ? "./images/rain.svg"
-                      : "./images/rain-night.svg";
-                  break;
-                case "Snow":
-                  weatherImage =
-                    currentHour >= 6 && currentHour <= 18
-                      ? "./images/snow.svg"
-                      : "./images/snow-night.svg";
-                  break;
-                case "Clouds":
-                  weatherImage =
-                    currentHour >= 6 && currentHour <= 18
-                      ? "./images/clouds.svg"
-                      : "./images/clouds-night.svg";
-                  break;
-                case "Haze":
-                  weatherImage =
-                    currentHour >= 6 && currentHour <= 18
-                      ? "./images/mist.svg"
-                      : "./images/mist-night.svg";
-                  break;
+
+              let weatherImage;
+              if (currentHour >= 6 && currentHour <= 18) {
+                switch (json.weather[0].main) {
+                  case 'Clear':
+                    weatherImage = './images/clear.svg';
+                    break;
+                  case 'Rain':
+                    weatherImage = './images/rain.svg';
+                    break;
+                  case 'Snow':
+                    weatherImage = './images/snow.svg';
+                    break;
+                  case 'Haze':
+                    weatherImage = './images/mist.svg';
+                    break;
+                  case 'Dust':
+                    weatherImage = './images/mist.svg';
+                    break;
+                  case 'Fog':
+                    weatherImage = './images/mist.svg';
+                    break;
+                  case 'Tornado':
+                    weatherImage = './images/mist.svg';
+                    break;
+                  case 'Drizzle':
+                    weatherImage = './images/drizzle.svg';
+                    break;
+                  case 'Thunderstorm':
+                    weatherImage = './images/thunderstorm.svg';
+                    break;
+                  default:
+                    weatherImage = '';
+                }
+              } else {
+                switch (json.weather[0].main) {
+                  case 'Clear':
+                    weatherImage = './images/clear-night.svg';
+                    break;
+                  case 'Rain':
+                    weatherImage = './images/rain-night.svg';
+                    break;
+                  case 'Snow':
+                    weatherImage = './images/snow-night.svg';
+                    break;
+                  case 'Haze':
+                    weatherImage = './images/mist-night.svg';
+                    break;
+                  case 'Dust':
+                    weatherImage = './images/mist-night.svg';
+                    break;
+                  case 'Fog':
+                    weatherImage = './images/mist-night.svg';
+                    break;
+                  case 'Tornado':
+                    weatherImage = './images/mist-night.svg';
+                    break;
+                  case 'Drizzle':
+                    weatherImage = './images/drizzle-night.svg';
+                    break;
+                  case 'Thunderstorm':
+                    weatherImage = './images/thunderstorm-night.svg';
+                    break;
+                  default:
+                    weatherImage = '';
+                }
               }
+            
+              // if (currentHour >= 6 && currentHour <= 18) {
+              //   switch (json.weather[0].description) {
+              //     case 'few clouds':
+              //     case 'scattered clouds':
+              //       weatherImage = './images/clouds.svg';
+              //       break;
+              //     case 'broken clouds':
+              //     case 'overcast clouds':
+              //       weatherImage = './images/overcast-clouds.svg';
+              //       break;
+              //     default:
+              //       weatherImage = '';
+              //   }
+              // }
+              // else {
+              //   switch (json.weather[0].description) {
+              //     case 'few clouds':
+              //     case 'scattered clouds':
+              //       weatherImage = './images/clouds-night.svg';
+              //       break;
+              //     case 'broken clouds':
+              //     case 'overcast clouds':
+              //       weatherImage = './images/overcast-clouds-night.svg';
+              //       break;
+              //     default:
+              //       weatherImage = '';
+              //   }
+              // }
+            
+              // Update the weather image
               if (weatherImage) {
                 image.src = weatherImage;
               }
-              temperature.innerHTML = `${parseInt(
-                json.main.temp
-              )}<span>°C</span>`;
+              
+              temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
               description.innerHTML = `${json.weather[0].description}`;
               feels.innerHTML = `Feels: ${json.main.feels_like}<span>°C</span>`;
               humidity.innerHTML = `${json.main.humidity}%`;
               wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
-              weatherBox.style.display = "";
-              weatherDetails.style.display = "";
-              weatherBox.classList.add("fadeIn");
-              weatherDetails.classList.add("fadeIn");
-              container.style.height = "590px";
+              weatherBox.style.display = '';
+              weatherDetails.style.display = '';
+              weatherBox.classList.add('fadeIn');
+              weatherDetails.classList.add('fadeIn');
+              container.style.height = '590px';
             } else {
-              console.log("Ошибка получения элементов интерфейса");
+              console.log('Ошибка получения элементов интерфейса');
             }
           })
-          .catch((error) => console.log("Ошибка получения данных: ", error));
+          .catch((error) => console.log('Ошибка получения данных: ', error));
       },
-      (error) => console.log("Ошибка получения геолокации: ", error)
+      (error) => console.log('Ошибка получения геолокации: ', error)
     );
   }
 });
 
-const search = document.querySelector(".search-box button");
-const container = document.querySelector(".container");
-const weatherBox = document.querySelector(".weather-box");
-const weatherDetails = document.querySelector(".weather-details");
-const error404 = document.querySelector(".not-found");
-search.addEventListener("click", () => {
-  const APIKey = "25c29314e06b2092eeea53a7f82e95ef";
-  const city = document.querySelector(".search-box input").value;
-  if (city === "") return;
+const search = document.querySelector('.search-box button');
+const container = document.querySelector('.container');
+const weatherBox = document.querySelector('.weather-box');
+const weatherDetails = document.querySelector('.weather-details');
+const error404 = document.querySelector('.not-found');
+
+search.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    search.click();
+  }
+});
+
+search.addEventListener('click', () => {
+  const APIKey = '25c29314e06b2092eeea53a7f82e95ef';
+  const city = document.querySelector('.search-box input').value;
+  if (city === '') return;
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`
   )
     .then((response) => response.json())
     .then((json) => {
-      if (json.cod === "404") {
-        Object.assign(container.style, { height: "400px" });
-        Object.assign(weatherBox.style, { display: "none" });
-        Object.assign(weatherDetails.style, { display: "none" });
-        Object.assign(error404.style, { display: "block" });
-        error404.classList.add("fadeIn");
+      if (json.cod === '404') {
+        Object.assign(container.style, { height: '400px' });
+        Object.assign(weatherBox.style, { display: 'none' });
+        Object.assign(weatherDetails.style, { display: 'none' });
+        Object.assign(error404.style, { display: 'block' });
+        error404.classList.add('fadeIn');
         return;
       }
-      error404.style.display = "none";
-      error404.classList.remove("fadeIn");
-      const image = document.querySelector(".weather-box img");
-      const temperature = document.querySelector(".weather-box .temperature");
-      const description = document.querySelector(".weather-box .description");
-      const feels = document.querySelector(".weather-box .feels");
+      error404.style.display = 'none';
+      error404.classList.remove('fadeIn');
+      const image = document.querySelector('.weather-box img');
+      const temperature = document.querySelector('.weather-box .temperature');
+      const description = document.querySelector('.weather-box .description');
+      const feels = document.querySelector('.weather-box .feels');
       const humidity = document.querySelector(
-        ".weather-details .humidity span"
+        '.weather-details .humidity span'
       );
-      const wind = document.querySelector(".weather-details .wind span");
+      const wind = document.querySelector('.weather-details .wind span');
       const currentTime = new Date();
       const currentHour = currentTime.getHours();
+      
       let weatherImage;
       if (currentHour >= 6 && currentHour <= 18) {
         switch (json.weather[0].main) {
-          case "Clear":
-            weatherImage = "./images/clear.svg";
+          case 'Clear':
+            weatherImage = './images/clear.svg';
             break;
-          case "Rain":
-            weatherImage = "./images/rain.svg";
+          case 'Rain':
+            weatherImage = './images/rain.svg';
             break;
-          case "Snow":
-            weatherImage = "./images/snow.svg";
+          case 'Snow':
+            weatherImage = './images/snow.svg';
             break;
-          case "Clouds":
-            weatherImage = "./images/clouds.svg";
+          case 'Haze':
+            weatherImage = './images/mist.svg';
             break;
-          case "Haze":
-            weatherImage = "./images/mist.svg";
+          case 'Dust':
+            weatherImage = './images/mist.svg';
+            break;
+          case 'Fog':
+            weatherImage = './images/mist.svg';
+            break;
+          case 'Tornado':
+            weatherImage = './images/mist.svg';
+            break;
+          case 'Drizzle':
+            weatherImage = './images/drizzle.svg';
+            break;
+          case 'Thunderstorm':
+            weatherImage = './images/thunderstorm.svg';
             break;
           default:
-            weatherImage = "";
+            weatherImage = '';
         }
       } else {
         switch (json.weather[0].main) {
-          case "Clear":
-            weatherImage = "./images/clear-night.svg";
+          case 'Clear':
+            weatherImage = './images/clear-night.svg';
             break;
-          case "Rain":
-            weatherImage = "./images/rain-night.svg";
+          case 'Rain':
+            weatherImage = './images/rain-night.svg';
             break;
-          case "Snow":
-            weatherImage = "./images/snow-night.svg";
+          case 'Snow':
+            weatherImage = './images/snow-night.svg';
             break;
-          case "Clouds":
-            weatherImage = "./images/clouds-night.svg";
+          case 'Haze':
+            weatherImage = './images/mist-night.svg';
             break;
-          case "Haze":
-            weatherImage = "./images/mist-night.svg";
+          case 'Dust':
+            weatherImage = './images/mist-night.svg';
+            break;
+          case 'Fog':
+            weatherImage = './images/mist-night.svg';
+            break;
+          case 'Tornado':
+            weatherImage = './images/mist-night.svg';
+            break;
+          case 'Drizzle':
+            weatherImage = './images/drizzle-night.svg';
+            break;
+          case 'Thunderstorm':
+            weatherImage = './images/thunderstorm-night.svg';
             break;
           default:
-            weatherImage = "";
+            weatherImage = '';
         }
       }
+
+      if (currentHour >= 6 && currentHour <= 18) {
+        switch (json.weather[0].description) {
+          case 'few clouds':
+          case 'scattered clouds':
+            weatherImage = './images/clouds.svg';
+            break;
+          case 'broken clouds':
+          case 'overcast clouds':
+            weatherImage = './images/overcast-clouds.svg';
+            break;
+          default:
+            weatherImage = '';
+        }
+      }
+      else {
+        switch (json.weather[0].description) {
+          case 'few clouds':
+          case 'scattered clouds':
+            weatherImage = './images/clouds-night.svg';
+            break;
+          case 'broken clouds':
+          case 'overcast clouds':
+            weatherImage = './images/overcast-clouds-night.svg';
+            break;
+          default:
+            weatherImage = '';
+        }
+      }
+
+      // Update the weather image
       if (weatherImage) {
         image.src = weatherImage;
       }
+
       temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
       description.innerHTML = `${json.weather[0].description}`;
       feels.innerHTML = `Feels: ${json.main.feels_like}<span>°C</span>`;
       humidity.innerHTML = `${json.main.humidity}%`;
       wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
       if (weatherBox && weatherDetails && container) {
-        Object.assign(weatherBox.style, { display: "" });
-        Object.assign(weatherDetails.style, { display: "" });
-        weatherBox.classList.add("fadeIn");
-        weatherDetails.classList.add("fadeIn");
-        Object.assign(container.style, { height: "590px" });
+        Object.assign(weatherBox.style, { display: '' });
+        Object.assign(weatherDetails.style, { display: '' });
+        weatherBox.classList.add('fadeIn');
+        weatherDetails.classList.add('fadeIn');
+        Object.assign(container.style, { height: '590px' });
       } else {
-        console.log("Ошибка получения элементов интерфейса");
+        console.log('Ошибка получения элементов интерфейса');
       }
     })
     .catch((error) => {
-      console.log("Ошибка получения данных: ", error);
+      console.log('Ошибка получения данных: ', error);
     });
 });
