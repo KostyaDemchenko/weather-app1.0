@@ -194,3 +194,8 @@ body {
 .wind img {
   margin-right: 10px;
 }
+
+.weather-box .time{
+  color: #363753;
+  margin-top: 15px;
+}

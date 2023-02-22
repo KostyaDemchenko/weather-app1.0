@@ -47,6 +47,7 @@ function var2(hour, main) {
 }
 
 window.addEventListener('load', () => {
+  const locationInput = document.querySelector('.search-box input');
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
@@ -55,6 +56,8 @@ window.addEventListener('load', () => {
         )
           .then((response) => response.json())
           .then((json) => {
+            const city = json.sys.country;
+            locationInput.value = city;
             const weatherBox = document.querySelector('.weather-box');
             const weatherDetails = document.querySelector('.weather-details');
             const container = document.querySelector('.container');
@@ -122,7 +125,7 @@ window.addEventListener('load', () => {
               weatherDetails.style.display = '';
               weatherBox.classList.add('fadeIn');
               weatherDetails.classList.add('fadeIn');
-              container.style.height = '590px';
+              container.style.height = '640px';
             } else {
               console.log('Ошибка получения элементов интерфейса');
             }
@@ -164,19 +167,33 @@ search.addEventListener('click', () => {
         error404.classList.add('fadeIn');
         return;
       }
+
+      // time in this location
+      const timeZoneOffsetSeconds = json.timezone - 7200;
+      const timeZoneOffsetMilliseconds = timeZoneOffsetSeconds * 1000;
+      const cityDate = new Date(Date.now() + timeZoneOffsetMilliseconds);
+
+      const options = { hour12: false, hourCycle: 'h23' };
+      const timeString = cityDate.toLocaleTimeString(undefined, options);
+
+      // output pic from time zone
+      const currentHour = cityDate.getHours();
+
+      // output time in html
+      const hoursAndMinutes = timeString.slice(0, 5);
+      const timeElement = document.querySelector('.weather-box .time');
+      timeElement.textContent = hoursAndMinutes;
+
       error404.style.display = 'none';
       error404.classList.remove('fadeIn');
+
       const image = document.querySelector('.weather-box img');
       const temperature = document.querySelector('.weather-box .temperature');
       const description = document.querySelector('.weather-box .description');
       const feels = document.querySelector('.weather-box .feels');
-      const humidity = document.querySelector(
-        '.weather-details .humidity span'
-      );
+      const humidity = document.querySelector('.weather-details .humidity span');
       const wind = document.querySelector('.weather-details .wind span');
-      const currentTime = new Date();
-      const currentHour = currentTime.getHours();
-      
+
       let weatherImage;
 
       if (currentHour >= 6 && currentHour <= 18) {
@@ -223,7 +240,7 @@ search.addEventListener('click', () => {
         Object.assign(weatherDetails.style, { display: '' });
         weatherBox.classList.add('fadeIn');
         weatherDetails.classList.add('fadeIn');
-        Object.assign(container.style, { height: '590px' });
+        Object.assign(container.style, { height: '640px' });
       } else {
         console.log('Ошибка получения элементов интерфейса');
       }
