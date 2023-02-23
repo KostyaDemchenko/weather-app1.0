@@ -2,6 +2,7 @@
 const container = document.querySelector('.container');
 const weatherBox = document.querySelector('.weather-box');
 const search = document.querySelector('.search-box button');
+const locationInput = document.querySelector('.search-box input');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 const image = document.querySelector('.weather-box img');
@@ -70,7 +71,6 @@ function weatherCases(hour, main) {
 
 // Search by the user location
 window.addEventListener('load', () => {
-  const locationInput = document.querySelector('.search-box input');
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
@@ -149,7 +149,7 @@ window.addEventListener('load', () => {
 // Search from input
 search.addEventListener('click', () => {
   const APIKey = '25c29314e06b2092eeea53a7f82e95ef';
-  const city = document.querySelector('.search-box input').value;
+  const city = document.querySelector('.search-box input').value.toUpperCase().split(' ')[0];
   if (city === '') return;
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
     .then((response) => response.json())
