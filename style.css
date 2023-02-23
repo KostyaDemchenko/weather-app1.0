@@ -101,11 +101,17 @@ body {
 }
 
 .weather-box .feels {
+  position: relative;
   color: #363753;
   margin-top: 5px;
   font-size: 18px;
   font-weight: 300;
   text-transform: capitalize;
+}
+.weather-box .feels span {
+  position: absolute;
+  margin-left: 4px;
+  font-size: 13px;
 }
 
 .weather-details {
@@ -155,21 +161,15 @@ body {
 .not-found {
   width: 100%;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 25px;
   scale: 0;
   opacity: 0;
   display: none;
 }
 
 .not-found img {
-  width: 70%;
-}
-
-.not-found p {
-  color: #363753;
-  font-size: 22px;
-  font-weight: 500;
-  margin-top: 12px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .weather-box,
@@ -195,7 +195,7 @@ body {
   margin-right: 10px;
 }
 
-.weather-box .time{
+.weather-box .time {
   color: #363753;
   margin-top: 15px;
 }

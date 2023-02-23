@@ -1,11 +1,33 @@
-function var2(hour, main) {
+// querySelector`s
+const container = document.querySelector('.container');
+const weatherBox = document.querySelector('.weather-box');
+const search = document.querySelector('.search-box button');
+const weatherDetails = document.querySelector('.weather-details');
+const error404 = document.querySelector('.not-found');
+const image = document.querySelector('.weather-box img');
+const temperature = document.querySelector('.weather-box .temperature');
+const description = document.querySelector('.weather-box .description');
+const feels = document.querySelector('.weather-box .feels');
+const timeElement = document.querySelector('.weather-box .time');
+const humidity = document.querySelector('.weather-details .humidity span');
+const wind = document.querySelector('.weather-details .wind span');
+
+
+// key bind 'enter -> search'
+document.querySelector('.search-box input').addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    search.click();
+  }
+});
+
+// Func for defolt images
+function weatherCases(hour, main) {
   if (hour >= 6 && hour <= 18) {
     switch (main) {
       case 'Clear':
         return './images/clear.svg';
       case 'Rain':
         return './images/rain.svg';
-        break;
       case 'Snow':
         return './images/snow.svg';
       case 'Haze':
@@ -46,42 +68,28 @@ function var2(hour, main) {
   }
 }
 
+// Search by the user location
 window.addEventListener('load', () => {
   const locationInput = document.querySelector('.search-box input');
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
-        fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&units=metric&appid=25c29314e06b2092eeea53a7f82e95ef`
-        )
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&units=metric&appid=25c29314e06b2092eeea53a7f82e95ef`)
           .then((response) => response.json())
           .then((json) => {
+
+            // showing user location
             const city = json.sys.country;
             locationInput.value = city;
-            const weatherBox = document.querySelector('.weather-box');
-            const weatherDetails = document.querySelector('.weather-details');
-            const container = document.querySelector('.container');
 
+            // weather info box
             if (weatherBox && weatherDetails && container) {
-              const image = document.querySelector('.weather-box img');
-              const temperature = document.querySelector(
-                '.weather-box .temperature'
-              );
-              const description = document.querySelector(
-                '.weather-box .description'
-              );
-              const feels = document.querySelector('.weather-box .feels');
-              const humidity = document.querySelector(
-                '.weather-details .humidity span'
-              );
-              const wind = document.querySelector(
-                '.weather-details .wind span'
-              );
+              // user time
               const currentTime = new Date();
               const currentHour = currentTime.getHours();
 
+              // case for clouds
               let weatherImage;
-        
               if (currentHour >= 6 && currentHour <= 18) {
                 switch (json.weather[0].description) {
                   case 'few clouds':
@@ -93,7 +101,7 @@ window.addEventListener('load', () => {
                     weatherImage = './images/overcast-clouds.svg';
                     break;
                   default:
-                    weatherImage = var2(currentHour, json.weather[0].main);
+                    weatherImage = weatherCases(currentHour, json.weather[0].main);
                 }
               }
               else {
@@ -107,18 +115,19 @@ window.addEventListener('load', () => {
                     weatherImage = './images/overcast-clouds-night.svg';
                     break;
                   default:
-                    weatherImage = var2(currentHour, json.weather[0].main);
+                    weatherImage = weatherCases(currentHour, json.weather[0].main);
                 }
               }
-        
+
               // Update the weather image
               if (weatherImage) {
                 image.src = weatherImage;
               }
-              
+
+              // HTML output
               temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
               description.innerHTML = `${json.weather[0].description}`;
-              feels.innerHTML = `Feels: ${json.main.feels_like}<span>°C</span>`;
+              feels.innerHTML = `Feels: ${Math.floor(json.main.feels_like)}<span>°C</span>`;
               humidity.innerHTML = `${json.main.humidity}%`;
               wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
               weatherBox.style.display = '';
@@ -137,36 +146,26 @@ window.addEventListener('load', () => {
   }
 });
 
-const search = document.querySelector('.search-box button');
-const container = document.querySelector('.container');
-const weatherBox = document.querySelector('.weather-box');
-const weatherDetails = document.querySelector('.weather-details');
-const error404 = document.querySelector('.not-found');
-
-// key bind 'enter -> search'
-document.querySelector('.search-box input').addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    search.click();
-  }
-});
-
+// Search from input
 search.addEventListener('click', () => {
   const APIKey = '25c29314e06b2092eeea53a7f82e95ef';
   const city = document.querySelector('.search-box input').value;
   if (city === '') return;
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`
-  )
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
     .then((response) => response.json())
     .then((json) => {
+
+      // invalid input
       if (json.cod === '404') {
-        Object.assign(container.style, { height: '400px' });
+        Object.assign(container.style, { height: '500px' });
         Object.assign(weatherBox.style, { display: 'none' });
         Object.assign(weatherDetails.style, { display: 'none' });
         Object.assign(error404.style, { display: 'block' });
         error404.classList.add('fadeIn');
         return;
       }
+      error404.style.display = 'none';
+      error404.classList.remove('fadeIn');
 
       // time in this location
       const timeZoneOffsetSeconds = json.timezone - 7200;
@@ -181,21 +180,10 @@ search.addEventListener('click', () => {
 
       // output time in html
       const hoursAndMinutes = timeString.slice(0, 5);
-      const timeElement = document.querySelector('.weather-box .time');
       timeElement.textContent = hoursAndMinutes;
 
-      error404.style.display = 'none';
-      error404.classList.remove('fadeIn');
-
-      const image = document.querySelector('.weather-box img');
-      const temperature = document.querySelector('.weather-box .temperature');
-      const description = document.querySelector('.weather-box .description');
-      const feels = document.querySelector('.weather-box .feels');
-      const humidity = document.querySelector('.weather-details .humidity span');
-      const wind = document.querySelector('.weather-details .wind span');
-
+      // case for clouds
       let weatherImage;
-
       if (currentHour >= 6 && currentHour <= 18) {
         switch (json.weather[0].description) {
           case 'few clouds':
@@ -207,7 +195,7 @@ search.addEventListener('click', () => {
             weatherImage = './images/overcast-clouds.svg';
             break;
           default:
-            weatherImage = var2(currentHour, json.weather[0].main);
+            weatherImage = weatherCases(currentHour, json.weather[0].main);
         }
       }
       else {
@@ -221,7 +209,7 @@ search.addEventListener('click', () => {
             weatherImage = './images/overcast-clouds-night.svg';
             break;
           default:
-            weatherImage = var2(currentHour, json.weather[0].main);
+            weatherImage = weatherCases(currentHour, json.weather[0].main);
         }
       }
 
@@ -230,9 +218,10 @@ search.addEventListener('click', () => {
         image.src = weatherImage;
       }
 
+      // HTML output
       temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
       description.innerHTML = `${json.weather[0].description}`;
-      feels.innerHTML = `Feels: ${json.main.feels_like}<span>°C</span>`;
+      feels.innerHTML = `Feels: ${Math.floor(json.main.feels_like)}<span>°C</span>`;
       humidity.innerHTML = `${json.main.humidity}%`;
       wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
       if (weatherBox && weatherDetails && container) {
