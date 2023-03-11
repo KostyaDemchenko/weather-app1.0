@@ -79,7 +79,7 @@ window.addEventListener('load', () => {
           .then((json) => {
 
             // showing user location
-            const city = json.sys.country;
+            const city = json.name;
             locationInput.value = city;
 
             // weather info box
